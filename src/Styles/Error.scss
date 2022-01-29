@@ -1,0 +1,29 @@
+@import './Variables.scss';
+@import './Mixins.scss';
+
+.error {
+  background: $clr-bg;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  font-family: $secondary-font;
+  h1 {
+    line-height: 1.5;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 3rem;
+    color: $clr-primary-5;
+  }
+  .error-btn {
+    @include btn;
+    border-color: $clr-mainWhite;
+    color: $clr-mainWhite;
+  }
+  .error-btn:hover {
+    background: rgba(0, 0, 0, 0.2);
+    transform: scale(1.03);
+  }
+}

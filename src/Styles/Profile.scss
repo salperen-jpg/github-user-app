@@ -1,0 +1,76 @@
+@import './Variables.scss';
+@import './Mixins.scss';
+.profile {
+  margin: 1rem 0;
+
+  &-center {
+    width: 90vw;
+    max-width: 870px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+  .img-container {
+    width: 15rem;
+    height: 15rem;
+    border: 5px solid $clr-primary-9;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  .img-container:hover img {
+    transform: scale(1.2);
+    opacity: 0.5;
+  }
+  img {
+    border-radius: 50%;
+    transition: $transition;
+  }
+  &-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  &-name {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .login {
+      color: $clr-gray-3;
+    }
+  }
+  &-info {
+    display: flex;
+    flex-direction: column;
+
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    &-icon {
+      color: $clr-another;
+      font-size: 1.5rem;
+    }
+    span {
+      color: #dfe3fa;
+    }
+  }
+  .join {
+    color: #8af4fe;
+  }
+
+  &-btn {
+    @include btn;
+    background: $clr-primary-3;
+    clear: $clr-mainWhite;
+  }
+  &-btn:hover {
+    background: rgba(0, 0, 0, 0.2);
+    color: $clr-mainWhite;
+  }
+}

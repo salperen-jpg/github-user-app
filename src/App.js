@@ -1,10 +1,20 @@
-import './App.css';
-import { useGlobalContext } from './context/context';
+import './Styles/Navbar.scss';
+import './Styles/Main.scss';
+
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Error, Dashboard, Login } from './pages';
+import Navbar from './components/Navbar';
 
 function App() {
-  const data = useGlobalContext();
-  console.log(data);
-  return <div></div>;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Dashboard />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='*' element={<Error />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;

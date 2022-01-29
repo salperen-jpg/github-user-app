@@ -31,6 +31,8 @@ VARIABLES
   --transition: all 0.3s linear;
   --spacing: 0.1rem;
   --radius: 5px;
+  --max-width: 1170px;
+  --phone-break: 768px;
 }
 
 ul {
