@@ -4,25 +4,30 @@
   margin: 1rem 0;
 
   &-center {
+    padding: 2rem 0;
     width: 90vw;
-    max-width: 870px;
+    max-width: 600px;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
-    gap: 2rem;
+    flex-direction: column;
+    gap: 0.5rem;
   }
   .img-container {
-    width: 15rem;
-    height: 15rem;
+    width: 12rem;
+    height: 12rem;
     border: 5px solid $clr-primary-9;
     border-radius: 50%;
     overflow: hidden;
+    margin: 0 auto;
+    z-index: 3;
   }
+
   .img-container:hover img {
     transform: scale(1.2);
     opacity: 0.5;
   }
   img {
+    text-align: center;
     border-radius: 50%;
     transition: $transition;
   }
@@ -32,20 +37,23 @@
     gap: 1rem;
   }
   &-name {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-
+    text-align: center;
+    margin-bottom: 1rem;
+    span {
+      display: block;
+      margin: 0.5rem 0;
+    }
     .login {
       color: $clr-gray-3;
+      font-weight: 600;
+      letter-spacing: 0.1rem;
     }
   }
   &-info {
-    display: flex;
-    flex-direction: column;
-
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
     gap: 1rem;
-    justify-content: center;
   }
 
   .info {
@@ -61,13 +69,15 @@
     }
   }
   .join {
-    color: #8af4fe;
+    color: $clr-gray-3;
   }
 
   &-btn {
     @include btn;
     background: $clr-primary-3;
     clear: $clr-mainWhite;
+    text-align: center;
+    letter-spacing: 0.085rem;
   }
   &-btn:hover {
     background: rgba(0, 0, 0, 0.2);

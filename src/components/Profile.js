@@ -4,7 +4,7 @@ import { useGlobalContext } from '../context/context';
 import { MdWork } from 'react-icons/md';
 import moment from 'moment';
 // icon
-import { ImForward, ImLocation2 } from 'react-icons/im';
+import { ImLocation2 } from 'react-icons/im';
 // twitter
 import { FaTwitter } from 'react-icons/fa';
 
@@ -25,20 +25,17 @@ const Profile = () => {
   return (
     <section className='profile'>
       <div className='profile-center'>
-        <div className='profile-left'>
-          <div className='img-container'>
-            <img src={img} alt='img' />
-          </div>
-          <div className='profile-name'>
-            <span className='login'>{login}</span>
-            <span className='join'>
-              Joined {moment(created_at).format('MMM Do YYYY')}
-            </span>
-            <a href={url} target='_blank' className=' btn profile-btn'>
-              {/* <ImForward /> */}
-              See profile
-            </a>
-          </div>
+        <div className='img-container'>
+          <img src={img} alt='img' />
+        </div>
+        <div className='profile-name'>
+          <span className='login'>{login}</span>
+          <span className='join'>
+            Joined {moment(created_at).format('MMM Do YYYY')}
+          </span>
+          <a href={url} target='_blank' className=' btn profile-btn'>
+            See profile
+          </a>
         </div>
 
         <div className='profile-info'>
@@ -52,7 +49,7 @@ const Profile = () => {
           </div>
           <div className='info'>
             <MdWork className='info-icon' />
-            <span>{company}</span>
+            <span>{company || 'Unknown'}</span>
           </div>
         </div>
       </div>
