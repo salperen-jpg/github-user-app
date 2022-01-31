@@ -25,6 +25,12 @@
       width: 80%;
     }
   }
+  .search-icon {
+    color: red;
+  }
+  .input-border {
+    border: 1px solid red;
+  }
   .search-btn {
     height: 3rem;
     width: 3rem;
@@ -39,7 +45,19 @@
   .search-request {
     display: none;
   }
+  .search-text {
+    margin-top: 1rem;
+  }
+  .color-req {
+    color: green;
+  }
+  .hourly-request {
+    color: $clr-gray-1;
+  }
   @media screen and(min-width:768px) {
+    .search-text {
+      display: none;
+    }
     .search-request {
       display: block;
       position: relative;

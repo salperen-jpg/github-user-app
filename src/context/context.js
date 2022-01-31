@@ -7,11 +7,12 @@ const endPoint = 'https://api.github.com';
 const GithubContext = React.createContext();
 
 export const AppProvider = ({ children }) => {
-  const [githubUser, setGithubUser] = useState('salperen-jpg');
+  const [githubUser, setGithubUser] = useState('');
   const [gitRepos, setGitRepos] = useState([]);
   const [request, setRequest] = useState(0);
   const [isError, setIsError] = useState({ show: false, msg: '' });
   const [isLoading, setIsLoading] = useState(false);
+  const [user, setUser] = useState('salperen-jpg');
 
   // Fetch for github user
   const searchGithubUser = async (user) => {
@@ -55,8 +56,14 @@ export const AppProvider = ({ children }) => {
   const displayError = (show = false, msg = '') => {
     setIsError({ show, msg });
   };
+  const handleChange = (query) => {
+    setUser(query);
+  };
 
   useEffect(checkRequest, []);
+  useEffect(() => {
+    searchGithubUser('salperen-jpg');
+  }, []);
 
   return (
     <GithubContext.Provider
@@ -67,6 +74,8 @@ export const AppProvider = ({ children }) => {
         isError,
         searchGithubUser,
         isLoading,
+        user,
+        handleChange,
       }}
     >
       {children}
