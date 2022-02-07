@@ -8,9 +8,8 @@ import '../Styles/Cards.scss';
 const Cards = () => {
   const { githubUser } = useGlobalContext();
   const {
-    login,
     avatar_url: img,
-    url,
+
     public_repos: repos,
     followers,
     following,

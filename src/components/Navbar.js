@@ -1,10 +1,29 @@
 import React from 'react';
+import { useAuth0 } from '@auth0/auth0-react';
 
 const Navbar = () => {
+  const { isAuthenticated, loginWithRedirect, logout, user, isLoading } =
+    useAuth0();
+  const isUser = isAuthenticated && user;
+
   return (
     <div>
       <nav>
-        <h1></h1>
+        {isUser && user.picture && (
+          <img src={user.picture} className='auth' alt={user.name} />
+        )}
+        {isUser && user.name && <h4>Welcome to app !</h4>}
+        {isUser ? (
+          <button
+            onClick={() => {
+              logout({ returnTo: window.location.origin });
+            }}
+          >
+            logout
+          </button>
+        ) : (
+          <button onClick={loginWithRedirect}>login</button>
+        )}
       </nav>
     </div>
   );

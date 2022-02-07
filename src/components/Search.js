@@ -15,6 +15,14 @@ const Search = () => {
     }
   };
 
+  const checkDisabled = (request) => {
+    if (request > 0) {
+      return false;
+    } else {
+      return true;
+    }
+  };
+
   return (
     <section className='search-container'>
       <div className='search-center'>
@@ -26,7 +34,7 @@ const Search = () => {
             className={`${
               request === 0 ? 'form-input input-border' : 'form-input'
             }`}
-            disabled={`${request === 0 ? true : false}`}
+            disabled={checkDisabled(request)}
             placeholder='Search for the user..'
           />
           <button type='submit' className='search-btn' onClick={handleSubmit}>

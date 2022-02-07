@@ -41,7 +41,7 @@ ul {
 a {
   text-decoration: none;
 }
-img {
+img:not(.auth) {
   display: block;
   width: 100%;
 }
