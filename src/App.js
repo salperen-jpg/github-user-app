@@ -2,19 +2,26 @@ import './Styles/Navbar.scss';
 import './Styles/Main.scss';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Error, Dashboard, Login } from './pages';
-import Navbar from './components/Navbar';
+import { Error, Dashboard, Login, AuthWrapper, PrivateRoute } from './pages';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Navbar />
-      <Routes>
-        <Route path='/' element={<Dashboard />} />
-        <Route path='/login' element={<Login />} />
-        <Route path='*' element={<Error />} />
-      </Routes>
-    </BrowserRouter>
+    <AuthWrapper>
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path='/'
+            element={
+              <PrivateRoute>
+                <Dashboard />
+              </PrivateRoute>
+            }
+          />
+          <Route path='/login' element={<Login />} />
+          <Route path='*' element={<Error />} />
+        </Routes>
+      </BrowserRouter>
+    </AuthWrapper>
   );
 }
 

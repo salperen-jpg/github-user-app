@@ -1,5 +1,5 @@
 import React from 'react';
-import { Cards, Repos, Search } from '../components';
+import { Cards, Navbar, Repos, Search } from '../components';
 import Loading from '../components/Loading';
 import Profile from '../components/Profile';
 import { useGlobalContext } from '../context/context';
@@ -13,6 +13,7 @@ const Dashboard = () => {
 
   return (
     <article className='dashboard'>
+      <Navbar />
       <Search></Search>
       <Profile />
       <Cards></Cards>

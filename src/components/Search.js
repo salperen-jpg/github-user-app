@@ -6,7 +6,6 @@ import '../Styles/Search.scss';
 const Search = () => {
   const { request, isError, searchGithubUser, user, handleChange } =
     useGlobalContext();
-  console.log(request);
 
   const handleSubmit = (e) => {
     e.preventDefault();

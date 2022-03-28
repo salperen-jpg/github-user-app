@@ -38,7 +38,6 @@ export const AppProvider = ({ children }) => {
   const checkRequest = () => {
     axios(`${endPoint}/rate_limit`)
       .then(({ data }) => {
-        console.log(data);
         let {
           rate: { remaining },
         } = data;
