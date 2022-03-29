@@ -7,25 +7,34 @@ const Navbar = () => {
   const isUser = isAuthenticated && user;
 
   return (
-    <div>
+    <>
       <nav>
-        {isUser && user.picture && (
-          <img src={user.picture} className='auth' alt={user.name} />
-        )}
-        {isUser && user.name && <h4>Welcome to app !</h4>}
-        {isUser ? (
-          <button
-            onClick={() => {
-              logout({ returnTo: window.location.origin });
-            }}
-          >
-            logout
-          </button>
-        ) : (
-          <button onClick={loginWithRedirect}>login</button>
-        )}
+        <div className='nav-center'>
+          {isUser && user.picture && (
+            <img src={user.picture} className='auth nav-img' alt={user.name} />
+          )}
+          {isUser && user.name && (
+            <h4>
+              Welcome to app ! <span>{user.name}</span>
+            </h4>
+          )}
+          {isUser ? (
+            <button
+              className='btn nav-btn'
+              onClick={() => {
+                logout({ returnTo: window.location.origin });
+              }}
+            >
+              logout
+            </button>
+          ) : (
+            <button className='btn nav-btn' onClick={loginWithRedirect}>
+              login
+            </button>
+          )}
+        </div>
       </nav>
-    </div>
+    </>
   );
 };
 
