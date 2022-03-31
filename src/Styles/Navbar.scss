@@ -24,5 +24,13 @@ nav {
     height: 3rem;
     width: 3rem;
     border-radius: 50%;
+    border: 3px solid $clr-primary-9;
+  }
+  .nav-btn {
+    font-weight: 600;
+  }
+  .nav-btn:hover {
+    background: rgba(0, 0, 0, 0.1);
+    color: $clr-mainWhite;
   }
 }

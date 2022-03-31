@@ -33,7 +33,7 @@ const Profile = () => {
           <span className='join'>
             Joined {moment(created_at).format('MMM Do YYYY')}
           </span>
-          <a href={url} target='_blank' className=' btn profile-btn'>
+          <a href={html_url} target='_blank' className=' btn profile-btn'>
             See profile
           </a>
         </div>

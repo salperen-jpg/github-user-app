@@ -10,12 +10,15 @@
   justify-content: center;
   gap: 3rem;
   font-family: $secondary-font;
-  h1 {
+  h4 {
     line-height: 1.5;
     margin: 0 auto;
     text-align: center;
-    font-size: 3rem;
+    font-size: 2rem;
     color: $clr-primary-5;
+  }
+  img {
+    height: 40vh;
   }
   .error-btn {
     @include btn;
