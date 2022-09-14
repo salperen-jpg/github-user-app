@@ -21,7 +21,6 @@ export const AppProvider = ({ children }) => {
     const response = await axios(`${endPoint}/users/${user}`).catch((err) =>
       console.log(err)
     );
-
     if (response) {
       setGithubUser(response.data);
       const { login } = response.data;
@@ -46,7 +45,6 @@ export const AppProvider = ({ children }) => {
 
         if (remaining === 0) {
           displayError(true, 'You exceeded the hourly search limit !');
-        } else {
         }
       })
       .catch((err) => console.log(err));

@@ -15,7 +15,7 @@ const Navbar = () => {
           )}
           {isUser && user.name && (
             <h4>
-              Welcome to app ! <span>{user.name}</span>
+              Welcome to Gituser App ! <span>{user.name}</span>
             </h4>
           )}
           {isUser ? (

@@ -2,7 +2,6 @@ import React from 'react';
 import '../Styles/Error.scss';
 import { Link } from 'react-router-dom';
 import Img from '../assets/404.svg';
-
 const Error = () => {
   return (
     <main className='error'>
